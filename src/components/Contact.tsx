@@ -87,9 +87,9 @@ export default function Contact () {
 
     
     return <section className="w-full h-full relative flex flex-col justify-center items-center overflow-hidden">
-        <motion.h2 ref={ref} animate={controls} initial='hidden' variants={contactVariants}>    <h1 className="text-3xl font-semibold text-center  text-white">
+        <motion.h2 ref={ref} animate={controls} className="text-3xl font-semibold text-center  text-white" initial='hidden' variants={contactVariants}>    
                Contact
-            </h1></motion.h2>
+            </motion.h2>
         <motion.div className="border-2 w-[98%] md:w-[60%] xl:w-[40%] text-center transparent-glass-background py-8 px-4 rounded-3xl glowing-shadow mt-8" ref={ref} animate={controls} initial='hidden' variants={contactVariants}>
         
             <form onSubmit={(e)=>handleSubmit(e)}

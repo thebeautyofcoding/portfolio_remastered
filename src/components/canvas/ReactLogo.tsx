@@ -3,7 +3,7 @@ import { useEffect } from "react"
 
 export default function ReactLogo () {
 
-    const reactLogo =  useGLTF('src/assets/reactLogo/scene.gltf')
+    const reactLogo =  useGLTF('/reactLogo/scene.gltf')
     
     const animations = useAnimations(reactLogo.animations, reactLogo.scene)
     

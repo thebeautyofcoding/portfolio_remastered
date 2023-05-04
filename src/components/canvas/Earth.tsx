@@ -10,7 +10,7 @@ export default function Earth () {
         'Base Stack',
     ]
     const [scale,setScale]=useState(0.7)
-    const memoizedEarth = useGLTF('src/assets/earth/scene.gltf')
+    const memoizedEarth = useGLTF('/earth/scene.gltf')
 
  
     const animations = useAnimations(memoizedEarth.animations, memoizedEarth.scene)
