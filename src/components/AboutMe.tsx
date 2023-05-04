@@ -53,7 +53,7 @@ const AboutMe = () => {
           </ul>
         </div>
       </motion.div>
-      <div className="absolute flex flex-col bottom-[43%] left-[50%] translate-x-[-50%]">
+      <div className="absolute flex flex-col bottom-[3%] left-[50%] translate-x-[-50%]">
         <div className="slide-bottom">
           <div className="down-arrow" />
           <div className="down-arrow" />

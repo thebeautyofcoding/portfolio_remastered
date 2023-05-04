@@ -22,7 +22,7 @@ function Skills() {
     }, [controls, inView]);
   
     return (
-      <section id="skills" className="lg:max-w-[100%] max-w-[75%] relative opacity-90 mb-16 sm:h-[100vh] md:h-auto text-white mx-auto">
+      <section id="skills" className="lg:max-w-[100%] max-w-[75%] relative opacity-90 mb-60 sm:h-[100vh] md:h-auto text-white mx-auto">
         <h2 className="text-3xl font-semibold text-center mb-8 text-white">
           Good Skills Mean Good Business
         </h2>
@@ -50,7 +50,7 @@ function Skills() {
             </motion.li>
           ))}
             </ul>
-            <div className='absolute flex flex-col bottom-[13%] left-[50%] translate-x-[-50%]'>
+            <div className='absolute flex flex-col bottom-[-15%] left-[50%] translate-x-[-50%]'>
                 <div className='slide-bottom'>
                     <div className='down-arrow'>
                     </div>

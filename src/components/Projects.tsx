@@ -46,7 +46,7 @@ function Projects() {
     }, 500)
   }
   return (
-    <section id="projects" className="relative opacity-90 mb-40 " ref={ref} >
+    <section id="projects" className="relative opacity-90 mb-60 " ref={ref} >
       <motion.div animate={controls} initial={{
         opacity: 0,
         x: 100
