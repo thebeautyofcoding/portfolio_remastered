@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback, useMemo } from "react"
+import { useEffect, useState, useCallback } from "react"
 import { useGLTF, useAnimations } from "@react-three/drei"
 
 
@@ -16,7 +16,7 @@ export default function Earth () {
     const animations = useAnimations(memoizedEarth.animations, memoizedEarth.scene)
     
 
-    const onScroll = useCallback((e) => {
+    const onScroll = useCallback(() => {
         
         const percentage = window.scrollY / (document.body.scrollHeight - window.innerHeight)
         const newScale = 0.7 + 1.5 * percentage
