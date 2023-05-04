@@ -12,6 +12,7 @@ import Socials from './components/Socials'
 import Contact from './components/Contact'
 import { WebGLRenderer } from 'three'
 import { Suspense, useState } from 'react'
+import { Loader } from '@react-three/drei'
 
 
 function App() {
@@ -36,6 +37,7 @@ window.onload = () => {
       <StarsAnimated />
  
     </Canvas>
+      <Loader/>
  <Socials/>
       <Header isLoded={isLoaded} />
       <AboutMe />
