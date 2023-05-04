@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import  { useEffect, useState } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useSpring, animated } from 'react-spring';
 import { useInView } from 'react-intersection-observer';
@@ -19,13 +19,6 @@ const AboutMe = () => {
      
     }
   }, [controls, inView]);
-
-  const hobbies = [
-    'Reading',
-    'Coding',
-    'Gaming',
-    'Watching Movies',
-  ]
 
   return (
     <div ref={ref} className="w-[95%] flex justify-center relative opacity-90 mb-16 h-[100vh] text-white mx-auto">

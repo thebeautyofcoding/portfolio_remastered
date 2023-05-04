@@ -1,4 +1,3 @@
-import { useState } from 'react'
 
 import './App.css'
 import  Earth  from './components/canvas/Earth'
@@ -10,12 +9,12 @@ import Projects from './components/Projects'
 import Skills from './components/Skills'
 import StarsAnimated from './components/StarsAnimated'
 import Socials from './components/Socials'
-import PC from './components/canvas/PC'
 import Contact from './components/Contact'
+import { WebGLRenderer } from 'three'
 
 
 function App() {
-  const bgColor = ({ gl }) => {
+  const bgColor = ({ gl }:{gl:WebGLRenderer}) => {
     gl.setClearColor('#000000',1)
 }
 

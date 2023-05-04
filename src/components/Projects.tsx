@@ -3,7 +3,7 @@
 
 import { useState, useEffect } from "react"
 import { projects } from './../data/projects';
-import { motion, useAnimation, useSpring } from 'framer-motion';
+import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 type ProjectType = "Frontend" | "Backend" | "Scripting" | "All"
 const tags: ProjectType[] = ["Frontend", "Backend", "Scripting", "All"]
@@ -13,7 +13,7 @@ function Projects() {
 
 
   const controls = useAnimation();
-  const springProps = useSpring({ opacity: 1, from: { opacity: 0 } });
+
 
   const { ref, inView } = useInView({
     threshold: 0.2,

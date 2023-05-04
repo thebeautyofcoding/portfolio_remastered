@@ -3,11 +3,10 @@ import { motion, useAnimation } from 'framer-motion'
 import emailjs from '@emailjs/browser'
 import { useEffect } from 'react'
 import { useInView } from 'react-intersection-observer'
-import { useRef } from 'react'
 import { useState } from 'react'
 
 export default function Contact () {
-    const formRef = useRef()
+
     const [form, setForm] = useState({
         name: '',
         email: '',
@@ -17,14 +16,14 @@ export default function Contact () {
     const [loading, setLoading] = useState(false)
 
 
-    const handleChange = (e) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement|HTMLTextAreaElement>) => {
         setForm({
             ...form,
             [e.target.name]: e.target.value
         })
     }
-
-    const handleSubmit = (e) => {
+// type event e
+    const handleSubmit = ( e: React.FormEvent<HTMLFormElement> ) => {
         e.preventDefault()
         setLoading(true)
         emailjs.send(
@@ -93,19 +92,19 @@ export default function Contact () {
             </h1></motion.h2>
         <motion.div className="border-2 w-[98%] md:w-[60%] xl:w-[40%] text-center transparent-glass-background py-8 px-4 rounded-3xl glowing-shadow mt-8" ref={ref} animate={controls} initial='hidden' variants={contactVariants}>
         
-            <form ref={formRef} onSubmit={handleSubmit}
+            <form onSubmit={(e)=>handleSubmit(e)}
             className='mt-12 flex flex-col gap-8'
             >
                 <label className="flex flex-col"><span className='text-white mb-4 font-bold'></span>
-                <input type="text" value={form.name} name="name" placeholder="Name" onChange={handleChange} className="border-2 form-field-color py-4 px-6 text-white rounded-lg outline-none font-medium" />
+                <input type="text" value={form.name} name="name" placeholder="Name"  onChange={(e)=>handleChange(e)} className="border-2 form-field-color py-4 px-6 text-white rounded-lg outline-none font-medium" />
                 </label>
                 <label className='flex flex-col'>
                     <span className='text-white font-bold mb-4'>Email</span>
-                    <input type="email" value={form.email}  name="email" placeholder="Email" onChange={handleChange} className="border-2 form-field-color py-4 px-6 text-white rounded-lg outline-none font-medium" />
+                    <input type="email" value={form.email}  name="email" placeholder="Email" onChange={(e)=>handleChange(e)} className="border-2 form-field-color py-4 px-6 text-white rounded-lg outline-none font-medium" />
                 </label>
                 <label className='flex flex-col'>
                     <span className='text-white font-bold mb-4'>Message</span>
-                    <textarea rows={7} value={form.message} name="message" placeholder="Message" onChange={handleChange} className="border-2 form-field-color py-4 px-6 text-white rounded-lg outline-none font-medium" />
+                    <textarea rows={7} value={form.message} name="message" placeholder="Message" onChange={(e)=>handleChange(e)} className="border-2 form-field-color py-4 px-6 text-white rounded-lg outline-none font-medium" />
                 </label>
                 <button type="submit" className="border-2 hover-glowing.shadow-and-scale py-3 px-8 rounded-xl outline-none w-fit text-white font-bold">
 

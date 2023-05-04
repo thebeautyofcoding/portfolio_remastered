@@ -2,23 +2,34 @@ import { Stars } from "@react-three/drei"
 import { useFrame } from "@react-three/fiber"
 import { useRef } from "react"
 import { useMemo } from "react"
+import { Object3D } from "three"
 
 
 export default function StarsAnimated () {
-    
-    const starsRef = useRef()
-    const starsProps = useMemo(() => ({
-        radius: 200, // Radius of the inner sphere (default=100)
-        depth: 50, // Depth of area where stars should fit (default=50)
-        count: 5000, // Amount of stars (default=5000)
-        factor: 4, // Size factor (default=4)
-        saturation: 1, // Saturation 0-1 (default=0)
-        fade: true, // Faded dots (default=false)
+    interface StarsProps {
+        radius: number;
+        depth: number;
+        count: number;
+        factor: number;
+        saturation: number;
+        fade: boolean;
+        speed: number;
+      }
+    const starsRef = useRef<Object3D> ()
+    const starsProps: StarsProps = useMemo(() => ({
+        radius: 200,
+        depth: 50,
+        count: 5000,
+        factor: 4,
+        saturation: 1,
+        fade: true,
         speed: 2,
-    },[]), 
-    )   
+      }), []);
+    
 
     useFrame(() => {
+        if (!starsRef.current) return
+      
         starsRef.current.rotation.x += 0.0001
         starsRef.current.rotation.y += 0.0001
         starsRef.current.rotation.z += 0.0001
