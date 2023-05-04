@@ -1,6 +1,5 @@
 import { useAnimations, useGLTF } from "@react-three/drei"
 import { useEffect } from "react"
-import { useMemo } from "react"
 
 export default function ReactLogo () {
 
