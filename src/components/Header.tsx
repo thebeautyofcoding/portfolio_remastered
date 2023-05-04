@@ -1,7 +1,7 @@
 import React, { useEffect } from "react"
 import { header } from "../data/header"
 import { motion } from "framer-motion"
-function Header() {
+function Header({isLoded}: {isLoded: boolean}) {
   
   const textToDisplay =
     "Frontend Developer | Backend Developer | Deployment | Scripting"
@@ -58,7 +58,7 @@ function Header() {
   return (
     <section id="header">
       <div className="relative h-screen w-screen ">
-
+{isLoded?
         <motion.div
           variants={parentContainer}
           initial="hidden"
@@ -85,7 +85,9 @@ function Header() {
               </motion.li>
             ))}
           </motion.ul>
-        </motion.div>
+          </motion.div>
+          :null
+}
       </div>
       <div className='absolute flex flex-col bottom-[13%] left-[50%] translate-x-[-50%]'>
                 <div className='slide-bottom'>
